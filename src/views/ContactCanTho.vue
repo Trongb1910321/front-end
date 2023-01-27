@@ -1,12 +1,12 @@
 <template>
     <div class="page row">
-        <div class="col-md-10">
+        <!-- <div class="col-md-10">
             <InputSearch v-model="searchText" />
-        </div>
-        <div class="mt-3 col-md-6">
-            <h4>
-                Danh bạ
-                <i class="fas fa-address-book"></i>
+        </div> -->
+        <div class="mt-3 col-md-12">
+            <h4 style="text-align: center;">
+                Địa điểm du lịch
+                <i class="fa-solid fa-map"></i>
             </h4>
             <ContactList 
                 v-if="filteredContactsCount > 0" 
@@ -15,27 +15,27 @@
             />
             <p v-else>Không có liên hệ nào.</p>
             <div class="mt-3 row justify-content-around align-items-center">
-                <button class="btn btn-sm btn-primary" @click="refreshList()">
+                <!-- <button class="btn btn-sm btn-primary" @click="refreshList()">
                     <i class="fas fa-redo"></i> Làm mới
-                </button>
+                </button> -->
                 <button class="btn btn-sm btn-success" @click="goToAddContact">
                     <i class="fas fa-plus"></i> Thêm mới
                 </button>
-                <button class="btn btn-sm btn-danger" @click="removeAllContacts">
+                <!-- <button class="btn btn-sm btn-danger" @click="removeAllContacts">
                     <i class="fa-solid fa-trash-can"></i> Xoá tất cả
-                </button>
+                </button> -->
             </div>
             
         </div>
-        <div class="mt-3 col-md-6">
+        <div class="mt-3 col-md-12">
             <div v-if="activeContact">
-                <h4>
-                    Chi tiết Liên hệ
-                    <i class="fas fa-address-card"></i>
+                <h4 style="text-align: center;">
+                    Mô tả địa điểm
+                    <i class="fa-solid fa-audio-description"></i>
                 </h4>
                 <ContactCard :contact="activeContact" />
 
-                <!-- <router-link 
+                <router-link 
                 :to="{
                     name: 'contact.edit',
                     params: { id: activeContact._id },
@@ -44,7 +44,7 @@
                     <span class="mt-2 badge badge-warning">
                         <i class="fas fa-edit"></i> Hiệu chỉnh</span
                     >
-                </router-link> -->
+                </router-link>
 
             </div>
         </div>
@@ -135,6 +135,10 @@ export default {
 <style scoped>
 .page {
     text-align: left;
-    max-width: 750px;
+    max-width: 100%;
 }
+/* .page1 {
+    text-align: center;
+    max-width: 100%;
+} */
 </style>

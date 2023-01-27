@@ -20,13 +20,17 @@
             <strong>Địa chỉ:</strong>
             {{ contact.content }}
         </div>
-        <div class="p-1">
-            <strong>Điện thoại:</strong>
-            <img :src="`/${contact.image}`" alt="">
-            <!-- <img src="contact.image" alt=""> -->
-            <!-- {{ contact.image }} -->
-        </div>
+    
        
+        <div class="p-1">
+            <strong>Hình ảnh:</strong>
+            <img :src="contact.image1">
+        </div>
+        <!-- <div class="p-1">
+            <strong>Điện thoại:</strong>
+            <img :src="contact.image[0]" alt="">
+            
+        </div> -->
         <!-- <div class="p-1" >
             <strong >Liên hệ yêu thích: &nbsp;</strong>
             <i v-if="contact.favorite" class="fas fa-check"></i>

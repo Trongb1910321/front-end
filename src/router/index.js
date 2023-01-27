@@ -10,7 +10,19 @@ const routes = [
     {
         path: "/:pathMatch(.*)*",
         name: "notfound",
-        component: ()=> import("@/views/NotFound.vue"),
+        component: () => import("@/views/NotFound.vue"),
+    },
+    {
+        path: "/post/:id",
+        name: "contact.edit",
+        component: () => import("@/views/ContactEdit.vue"),
+        props: true //enable to use $route.params as props
+    },
+    {
+        path: "/create",
+        name: "contact.add",
+        component: () => import("@/views/ContactAdd.vue"),
+        props: true //enable to use $route.params as props
     },
 
 ];
